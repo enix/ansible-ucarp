@@ -17,7 +17,7 @@
     state: present
     backup: true
   notify:
-    - reload networking
+    - restart networking
 
 - name: "Configure ucarp interface"
   blockinfile:
@@ -32,7 +32,7 @@
       ucarp-advbase  {{ ucarp__advbase }}
       ucarp-master   {{ ucarp__master }}
   notify:
-    - reload networking
+    - restart networking
 
 - name: "Configure ucarp vip interface"
   template:
@@ -42,4 +42,4 @@
     owner: root
     group: root
   notify:
-    - reload networking
+    - restart networking
