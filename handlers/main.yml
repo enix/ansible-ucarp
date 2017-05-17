@@ -1,5 +1,5 @@
 ---
-# handlers file for $roletemplate
+# handlers file for ucarp
 
 # - name: restart $service
 #   sudo: yes
