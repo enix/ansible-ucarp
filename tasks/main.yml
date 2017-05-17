@@ -36,7 +36,7 @@
 
 - name: "Configure ucarp vip interface"
   template:
-    src: interfaces_vip.j2
+    src: interface_vip.j2
     dest: "/etc/network/interfaces.d/{{ ucarp__interface }}:ucarp"
     mode: 0444
     owner: root
