@@ -26,7 +26,7 @@
     backup: true
     block: |
       ucarp-vid      {{ ucarp__vid }}
-      ucarp-vip      {{ ucarp__vip | mandatory }}
+      ucarp-vip      {{ ucarp__vip | mandatory | ipv4 }}
       ucarp-password {{ ucarp__password | mandatory }}
       ucarp-advskew  {{ ucarp__advskew }}
       ucarp-advbase  {{ ucarp__advbase }}
@@ -36,7 +36,7 @@
 
 - name: "Configure ucarp vip interface"
   template:
-    src: interfaces-ucarp.j2
+    src: interfaces:ucarp.j2
     dest: "/etc/network/interfaces.d/{{ ucarp__interface }}:ucarp"
     mode: 0444
     owner: root

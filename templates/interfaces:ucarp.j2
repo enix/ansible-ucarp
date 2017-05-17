@@ -2,7 +2,7 @@
 
 auto  {{ ucarp__interface }}:ucarp
 iface {{ ucarp__interface }}:ucarp inet static
-  address {{ ucarp__vip | mandatory }}
+  address {{ ucarp__vip | mandatory | ipv4 }}
   netmask {{ ucarp__vip_netmask }}
   {% if ucarp__vip_upaction is defined %}
   up {{ ucarp__vip_upaction }}
