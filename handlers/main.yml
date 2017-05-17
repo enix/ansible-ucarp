@@ -1,10 +1,5 @@
 ---
 # handlers file for ucarp
 
-# - name: restart $service
-#   sudo: yes
-#   service: name=$service state=restarted
-
-# - name: reload $service
-#   sudo: yes
-#   service: name=$service state=reloaded
+- name: reload networking
+  service: name=networking state=reloaded

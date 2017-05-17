@@ -16,6 +16,8 @@
     line: "source /etc/network/interfaces.d/*"
     state: present
     backup: true
+  notify:
+    - reload networking
 
 - name: "Configure ucarp interface"
   blockinfile:
@@ -29,12 +31,15 @@
       ucarp-advskew  {{ ucarp__advskew }}
       ucarp-advbase  {{ ucarp__advbase }}
       ucarp-master   {{ ucarp__master }}
+  notify:
+    - reload networking
 
 - name: "Configure ucarp vip interface"
   template:
     src: interfaces-ucarp.j2
-    dest: "/etc/network/interfaces.d/{{ ucarp__interface }}:ucarp"
+    dest: "/etc/network/interfaces.d/{{ ucarp__interface }}_ucarp"
     mode: 0444
     owner: root
     group: root
-    backup: true
+  notify:
+    - reload networking
