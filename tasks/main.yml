@@ -16,3 +16,13 @@
     line: "source /etc/network/interfaces.d/*"
     state: present
     backup: true
+
+
+- name: "Configure ucarp interface"
+  template:
+    src: interfaces-ucarp.j2
+    dest: "/etc/network/interfaces.d/{{ ucarp__interface }}:ucarp"
+    mode: 0444
+    owner: root
+    group: root
+    backup: true
