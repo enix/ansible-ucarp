@@ -2,6 +2,7 @@
 # defaults file for ucarp
 
 #ucarp__interface:
+ucarp__interface_configfile: /etc/network/interfaces
 ucarp__vid: 10
 #ucarp__vip:
 ucarp__vip_netmask: 255.255.255.255

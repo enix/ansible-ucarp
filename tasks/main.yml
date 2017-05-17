@@ -17,8 +17,20 @@
     state: present
     backup: true
 
-
 - name: "Configure ucarp interface"
+  blockinfile:
+    dest: "{{ ucarp__interface_configfile }}"
+    insertafter: "iface {{ ucarp__interface }} inet"
+    backup: true
+    block: |
+      ucarp-vid      {{ ucarp__vid }}
+      ucarp-vip      {{ ucarp__vip | mandatory }}
+      ucarp-password {{ ucarp__password | mandatory }}
+      ucarp-advskew  {{ ucarp__advskew }}
+      ucarp-advbase  {{ ucarp__advbase }}
+      ucarp-master   {{ ucarp__master }}
+
+- name: "Configure ucarp vip interface"
   template:
     src: interfaces-ucarp.j2
     dest: "/etc/network/interfaces.d/{{ ucarp__interface }}:ucarp"

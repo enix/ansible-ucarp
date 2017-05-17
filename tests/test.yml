@@ -3,3 +3,5 @@
   roles:
     - role: '../../.'
       ucarp__interface: eth0
+      ucarp__vip: 192.168.42.42
+      ucarp__password: totototo
