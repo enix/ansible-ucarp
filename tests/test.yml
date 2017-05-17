@@ -2,3 +2,4 @@
 - hosts: test
   roles:
     - role: '../../.'
+      ucarp__interface: eth0

@@ -19,7 +19,14 @@ Role Variables
 
 This roles comes preloaded with almost every available default. You can override each one in your hosts/group vars, in your inventory, or in your play. See the annotated defaults in `defaults/main.yml` for help in configuration. All provided variables start with `ucarp__`.
 
-- `ucarp__` - desc
+- `ucarp__interface` - *mandatory*, network interface on which ucarp should bind on; will fail if none defined, `default: none`.
+- `ucarp__vid` - id of the ucarp setup, `default: 10`.
+- `ucarp__vip` - *mandatory*, virtual ip address, `default: none`.
+- `ucarp__vip_netmask` - virtual ip netmask, `default: 255.255.255.255`.
+- `ucarp__password` - *mandatory*, password used to auth ucarp processes, `default: none`.
+- `ucarp__advskew` - advskew parameter, `default: 0`.
+- `ucarp__advbase` - advbase parameter, `default: 1`.
+- `ucarp__master` - make this host master by default (preempt mode), `default: no`
 
 Dependencies
 ------------
