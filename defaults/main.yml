@@ -6,6 +6,8 @@ ucarp__interface_configfile: /etc/network/interfaces
 ucarp__vid: 10
 #ucarp__vip:
 ucarp__vip_netmask: 255.255.255.255
+#ucarp__vip_upaction:
+#ucarp__vip_downaction:
 #ucarp__password:
 ucarp__advskew: 0
 ucarp__advbase: 1

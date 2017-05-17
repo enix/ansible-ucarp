@@ -5,3 +5,4 @@
       ucarp__interface: eth0
       ucarp__vip: 192.168.42.43
       ucarp__password: totototo
+      ucarp__vip_upaction: echo "this is a test" > /tmp/test || true

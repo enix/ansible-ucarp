@@ -2,5 +2,11 @@
 
 auto  {{ ucarp__interface }}:ucarp
 iface {{ ucarp__interface }}:ucarp inet static
-        address {{ ucarp__vip | mandatory }}
-        netmask {{ ucarp__vip_netmask }}
+  address {{ ucarp__vip | mandatory }}
+  netmask {{ ucarp__vip_netmask }}
+  {% if ucarp__vip_upaction is defined %}
+  up {{ ucarp__vip_upaction }}
+  {% endif %}
+  {% if ucarp__vip_downaction is defined %}
+  up {{ ucarp__vip_downaction }}
+  {% endif %}

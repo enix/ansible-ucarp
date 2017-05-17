@@ -24,6 +24,8 @@ This roles comes preloaded with almost every available default. You can override
 - `ucarp__vid` - id of the ucarp setup, `default: 10`.
 - `ucarp__vip` - *mandatory*, virtual ip address, `default: none`.
 - `ucarp__vip_netmask` - virtual ip netmask, `default: 255.255.255.255`.
+- `ucarp__vip_upaction` - up action in interface configuration, `default: none`.
+- `ucarp__vip_downaction` - down action in interface configuration, `default: none`.
 - `ucarp__password` - *mandatory*, password used to auth ucarp processes, `default: none`.
 - `ucarp__advskew` - advskew parameter, `default: 0`.
 - `ucarp__advbase` - advbase parameter, `default: 1`.
@@ -32,7 +34,7 @@ This roles comes preloaded with almost every available default. You can override
 Dependencies
 ------------
 
-- None
+- The network interface used to provide the ucarp communication and configuration between the different hosts must be statically configured. dhcp interfaces are not supported by ucarp Debian up-scripts because it use the address configured to start the ucarp daemon
 
 Usage
 -----
