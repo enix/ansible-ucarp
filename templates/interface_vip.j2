@@ -1,6 +1,5 @@
 # Ucarp vip interface configuration
 
-auto  {{ ucarp__interface }}:ucarp
 iface {{ ucarp__interface }}:ucarp inet static
   address {{ ucarp__vip | mandatory | ipv4 }}
   netmask {{ ucarp__vip_netmask }}
