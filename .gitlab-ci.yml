@@ -5,6 +5,8 @@ variables:
 
 .ansible_test_template: &ansible_test
   script:
+    - apt-get update
+    - apt-get install -y python-netaddr
     - ansible --version
     # - ansible-galaxy install -v -r requirements.yml
     - ansible-playbook tests/test.yml --syntax-check
