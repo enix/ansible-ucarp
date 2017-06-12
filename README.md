@@ -9,6 +9,7 @@ Requirements
 
 Supported targets:
 
+- Ubuntu 14.04 "Trusty"
 - Ubuntu 16.04 "Xenial"
 - Debian 8 "Jessie"
 
