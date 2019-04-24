@@ -1,6 +1,6 @@
 galaxy_info:
   author: Laurent Corbes
-  role_name: logstash
+  role_name: ucarp
   description: Ansible role to deploy ucarp software configuration
   company: Enix Hosting (http://www.enix.fr)
 
