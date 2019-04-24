@@ -1,0 +1,17 @@
+---
+
+- hosts: test
+  tasks:
+    - name: "Install dependencies python3"
+      apt:
+        name: "python3-netaddr"
+        update_cache: yes
+      when: ansible_python.version.major == 3
+    - name: "Install dependencies python"
+      apt:
+        name: "python-netaddr"
+        update_cache: yes
+      # when: ansible_python.version.major == 2
+    # - name: "Install dependencies python 2"
+    #   pip:
+    #     name: "netaddr"

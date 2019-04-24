@@ -10,6 +10,8 @@ variables:
     - ansible-lint --force-color . || true
     - yamllint -f colored . || true
     # - ansible-galaxy install -v -r requirements.yml
+    # install dependencies
+    - ansible-playbook -vvv --connection=local tests/deps.yml
     - ansible-playbook tests/test.yml --syntax-check
     - ansible-playbook -vvv --connection=local tests/test.yml
     - idempotence=$(mktemp)
