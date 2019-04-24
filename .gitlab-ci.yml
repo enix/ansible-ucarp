@@ -48,6 +48,5 @@ ubuntu-xenial:
 ubuntu-bionic:
   image: ansiblecheck/ansiblecheck:ubuntu-bionic
   before_script:
-    - apt-get install -y python3-netaddr
     - ln -sf /usr/bin/python3 /usr/bin/python
   <<: *ansible_test
