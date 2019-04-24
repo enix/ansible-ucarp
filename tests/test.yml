@@ -2,10 +2,16 @@
 
 - hosts: test
   tasks:
-    - name: "Install dependencies"
+    - name: "Install dependencies python3"
       apt:
-        name: "{{ (ansible_python_interpreter is defined) | ternary(ansible_python_interpreter | basename, 'python') }}-netaddr"
+        name: "python3-netaddr"
         update_cache: yes
+      when: ansible_python.version.major == 3
+    - name: "Install dependencies python"
+      apt:
+        name: "python-netaddr"
+        update_cache: yes
+      when: ansible_python.version.major == 2
 
 - hosts: test
   roles:
