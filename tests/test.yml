@@ -1,4 +1,12 @@
 ---
+
+- hosts: test
+  tasks:
+    - name: "Install dependencies"
+      apt:
+        name: "{{ ansible_python_interpreter | basename }}-addr"
+        update_cache: yes
+    
 - hosts: test
   roles:
     - role: '../../.'
