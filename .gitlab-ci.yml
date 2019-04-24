@@ -8,6 +8,9 @@ variables:
     - apt-get update
     - apt-get install -y python-netaddr
     - ansible --version
+    # Run linters. Does not fail if no errors reported
+    - ansible-lint --force-color . || true
+    - yamllint -f colored . || true
     # - ansible-galaxy install -v -r requirements.yml
     - ansible-playbook tests/test.yml --syntax-check
     - ansible-playbook -vvv --connection=local tests/test.yml
