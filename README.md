@@ -1,4 +1,4 @@
-eNiXHosting.ucarp for Ansible
+enix.ucarp for Ansible
 ==================
 
 A role for deploying and configuring [ucarp](https://www.pureftpd.org/project/ucarp) on unix hosts using [Ansible](http://www.ansible.com/).
@@ -11,8 +11,9 @@ Supported targets:
 
 - Ubuntu 14.04 "Trusty"
 - Ubuntu 16.04 "Xenial"
+- Ubuntu 18.04 "Bionic"
 - Debian 8 "Jessie"
-
+- Debian 8 "Stretch"
 
 Role Variables
 --------------
@@ -39,14 +40,10 @@ Dependencies
 Usage
 -----
 
-Clone this repo into your roles directory:
+Use Ansible galaxy requirements.yml
 
-    $ git clone https://gitlab.enix.org/ansible/ansible-ucarp.git roles/ucarp
-
-Or use Ansible galaxy requirements.yml
-
-    # eNiXHosting.ucarp galaxy role
-    - src: eNiXHosting.ucarp
+    # enix.ucarp galaxy role
+    - src: enix.ucarp
       name: ucarp
 
 And add it to your play's roles:
@@ -70,7 +67,7 @@ Still to do
 Changelog
 ---------
 
-### 0.1
+### 1.0
 
 Initial version.
 
