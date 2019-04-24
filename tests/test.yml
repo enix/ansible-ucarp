@@ -11,7 +11,10 @@
       apt:
         name: "python-netaddr"
         update_cache: yes
-      when: ansible_python.version.major == 2
+      # when: ansible_python.version.major == 2
+    - name: "Install dependencies python 2"
+      pip:
+        name: "netaddr"
 
 - hosts: test
   roles:
