@@ -4,9 +4,9 @@
   tasks:
     - name: "Install dependencies"
       apt:
-        name: "{{ ansible_python_interpreter | basename }}-addr"
+        name: "{{ (ansible_python_interpreter is defined) | ternary(ansible_python_interpreter | basename, 'python') }}-netaddr"
         update_cache: yes
-    
+
 - hosts: test
   roles:
     - role: '../../.'
