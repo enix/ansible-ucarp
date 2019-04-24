@@ -7,16 +7,16 @@ env:
     - python_bin: /usr/bin/python
 
   matrix:
-    - distribution: Ubuntu
-      distribution_version: bionic
-      init: /lib/systemd/systemd
-      run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-      python_bin: /usr/bin/python3
-    - distribution: Ubuntu
-      distribution_version: xenial
-      init: /lib/systemd/systemd
-      run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-      python_bin: /usr/bin/python3
+    # - distribution: Ubuntu
+    #   distribution_version: bionic
+    #   init: /lib/systemd/systemd
+    #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    #   python_bin: /usr/bin/python3
+    # - distribution: Ubuntu
+    #   distribution_version: xenial
+    #   init: /lib/systemd/systemd
+    #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    #   python_bin: /usr/bin/python3
     - distribution: Ubuntu
       distribution_version: trusty
       init: /sbin/init
