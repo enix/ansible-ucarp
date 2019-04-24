@@ -19,6 +19,14 @@
   notify:
     - restart networking
 
+- name: "Create interfaces.d folder"
+  file:
+    dest: /etc/network/interfaces.d
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
 - name: "Configure ucarp interface"
   blockinfile:
     dest: "{{ ucarp__interface_configfile }}"
