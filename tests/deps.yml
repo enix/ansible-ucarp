@@ -6,9 +6,11 @@
       apt:
         name: "python3-netaddr"
         update_cache: yes
+        force: yes
       when: ansible_python.version.major == 3
     - name: "Install dependencies python"
       apt:
         name: "python-netaddr"
         update_cache: yes
+        force: yes
       when: ansible_python.version.major == 2
