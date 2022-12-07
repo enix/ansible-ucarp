@@ -7,5 +7,5 @@ iface {{ ucarp__interface }}:ucarp inet static
   up {{ ucarp__vip_upaction }}
   {% endif %}
   {% if ucarp__vip_downaction is defined %}
-  up {{ ucarp__vip_downaction }}
+  down {{ ucarp__vip_downaction }}
   {% endif %}
