@@ -62,7 +62,7 @@ importgalaxy:
     - main
     - master
     - tags
-  when: on_success
+#  when: on_success
   before_script:
     - ansible --version
   script:
